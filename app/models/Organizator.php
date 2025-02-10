@@ -1,6 +1,3 @@
-You're right. Let me update the class to use all variables from your Evenement table:
-
-```php
 <?php
 
 require_once 'User.php';
@@ -15,73 +12,71 @@ class Organizator extends User {
         parent::__construct($id, $email, $name, $role);
     }
 
-    public function addEvent($titre, $description, $date, $lieu, $prix, $capacite, $statut, $categorie_id, $image_url = null) {
+    // Add a course
+    public function addCourse($title, $description, $content, $tags = [], $category) {
         $db = Database::getInstance()->getConnection();
-        
-        $query = $db->prepare("INSERT INTO Evenement (
-            titre, description, date, lieu, prix, capacite, statut, 
-            is_verified, categorie_id, image_url
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, FALSE, ?, ?)");
-        
-        return $query->execute([
-            $titre, $description, $date, $lieu, $prix, 
-            $capacite, $statut, $categorie_id, $image_url
-        ]);
+
+        $query = $db->prepare("INSERT INTO courses (title, description, content, teacher_id, category) VALUES (?, ?, ?, ?, ?)");
+        $query->execute([$title, $description, $content, $this->id, $category]);
+
+        $courseId = $db->lastInsertId();
+
+        // Add tags if provided
+        foreach ($tags as $tag) {
+            $tagQuery = $db->prepare("INSERT INTO course_tags (course_id, tag) VALUES (?, ?)");
+            $tagQuery->execute([$courseId, $tag]);
+        }
+
+        echo "Course added successfully!";
     }
 
-    public function manageEvents() {
+    // Manage courses
+    public function manageCourses() {
         $db = Database::getInstance()->getConnection();
-        
-        $query = $db->prepare("
-            SELECT e.id, e.titre, e.description, e.date, e.lieu, 
-                   e.prix, e.capacite, e.statut, e.is_verified, 
-                   e.categorie_id, e.image_url, c.nom as categorie_nom 
-            FROM Evenement e 
-            LEFT JOIN Categorie c ON e.categorie_id = c.id
-        ");
-        $query->execute();
-        return $query->fetchAll();
+
+        $query = $db->prepare("SELECT * FROM courses WHERE teacher_id = ?");
+        $query->execute([$this->id]);
+        $courses = $query->fetchAll();
+
+        if (empty($courses)) {
+            echo "You have not created any courses.";
+        } else {
+            foreach ($courses as $course) {
+                echo "Course ID: " . $course['id'] . ", Title: " . $course['title'] . ", Description: " . $course['description'] . "\n";
+            }
+        }
     }
 
-    public function editEvent($eventId, $titre, $description, $date, $lieu, $prix, $capacite, $statut, $categorie_id, $image_url = null) {
+    // Edit a course
+    public function editCourse($courseId, $title, $description, $content, $tags = [], $category) {
         $db = Database::getInstance()->getConnection();
-        
-        $query = $db->prepare("
-            UPDATE Evenement 
-            SET titre = ?, description = ?, date = ?, lieu = ?, 
-                prix = ?, capacite = ?, statut = ?, categorie_id = ?, 
-                image_url = ?
-            WHERE id = ?
-        ");
-        
-        return $query->execute([
-            $titre, $description, $date, $lieu, $prix, 
-            $capacite, $statut, $categorie_id, $image_url, $eventId
-        ]);
+
+        $query = $db->prepare("UPDATE courses SET title = ?, description = ?, content = ?, category = ? WHERE id = ? AND teacher_id = ?");
+        $query->execute([$title, $description, $content, $category, $courseId, $this->id]);
+
+        // Remove existing tags and re-add them
+        $deleteTagsQuery = $db->prepare("DELETE FROM course_tags WHERE course_id = ?");
+        $deleteTagsQuery->execute([$courseId]);
+
+        foreach ($tags as $tag) {
+            $tagQuery = $db->prepare("INSERT INTO course_tags (course_id, tag) VALUES (?, ?)");
+            $tagQuery->execute([$courseId, $tag]);
+        }
+
+        echo "Course updated successfully!";
     }
 
-    public function getEventDetails($eventId) {
+    // Delete a course
+    public function deleteCourse($courseId) {
         $db = Database::getInstance()->getConnection();
-        
-        $query = $db->prepare("
-            SELECT e.*, c.nom as categorie_nom 
-            FROM Evenement e 
-            LEFT JOIN Categorie c ON e.categorie_id = c.id 
-            WHERE e.id = ?
-        ");
-        $query->execute([$eventId]);
-        return $query->fetch();
-    }
 
-    public function updateVerificationStatus($eventId, $isVerified) {
-        $db = Database::getInstance()->getConnection();
-        
-        $query = $db->prepare("
-            UPDATE Evenement 
-            SET is_verified = ? 
-            WHERE id = ?
-        ");
-        return $query->execute([$isVerified, $eventId]);
+        // Delete the course and associated tags
+        $deleteTagsQuery = $db->prepare("DELETE FROM course_tags WHERE course_id = ?");
+        $deleteTagsQuery->execute([$courseId]);
+
+        $deleteCourseQuery = $db->prepare("DELETE FROM courses WHERE id = ? AND teacher_id = ?");
+        $deleteCourseQuery->execute([$courseId, $this->id]);
+
+        echo "Course deleted successfully!";
     }
 }
-```

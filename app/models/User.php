@@ -26,8 +26,5 @@ abstract class User {
         ];
     }
 
-    abstract public function login($email, $password);
-    abstract public function logout();
-    public function register($email, $password);
 }
 
