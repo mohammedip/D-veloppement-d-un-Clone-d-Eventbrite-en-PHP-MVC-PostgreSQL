@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE php>
+<php lang="en">
 
-<?php echo "mal had la9lawi"; ?>
-
-
-<!-- Mirrored from demo.themewinter.com/html/exhibz/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 01 Aug 2024 15:01:08 GMT -->
+<!-- Mirrored from demo.themewinter.com/php/exhibz/index.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 01 Aug 2024 15:01:08 GMT -->
 <head>
    <!-- Basic Page Needs ================================================== -->
    <meta charset="utf-8">
@@ -14,7 +11,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
 
    <!-- Site Title -->
-   <title>Exhibz - Conference &amp; Event HTML Template</title>
+   <title>Exhibz - Conference &amp; Event php Template</title>
 
 
 
@@ -40,10 +37,10 @@
    <!-- Responsive styles-->
    <link rel="stylesheet" href="css/responsive.css">
 
-   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+   <!-- php5 shim and Respond.js IE8 support of php5 elements and media queries -->
    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/php5shiv/3.7.2/php5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
       <![endif]-->
 
@@ -56,7 +53,7 @@
          <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light">
                <!-- logo-->
-               <a class="navbar-brand" href="index.html">
+               <a class="navbar-brand" href="home.php">
                   <img src="images/logos/logo.png" alt="">
                </a>
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
@@ -70,30 +67,30 @@
                     
                      </li>
                      <li class="dropdown nav-item">
-                        <a href="about.html" class="" data-toggle="dropdown">About </i></a>
+                        <a href="about.php" class="" data-toggle="dropdown">About </i></a>
                         
                      </li>
                      <li class="nav-item dropdown">
-                        <a href="speakers.html" class="" data-toggle="dropdown">Speakers </i></a>
+                        <a href="speakers.php" class="" data-toggle="dropdown">Speakers </i></a>
                     
 
                      </li>
                      <li class="nav-item dropdown">
-                        <a href="speakers.html" class="" data-toggle="dropdown">Schedule <i class="fa fa-angle-down"></i></a>
+                        <a href="speakers.php" class="" data-toggle="dropdown">Schedule <i class="fa fa-angle-down"></i></a>
                     
                      </li>
                      <li class="nav-item dropdown">
                         <a href="#"> Blog <i class="fa fa-angle-down"></i></a>
                         <ul class="dropdown-menu" role="menu">
-                           <li><a href="blog.html">Blog</a></li>
-                           <li><a href="news-single.html">Blog Details</a></li>
+                           <li><a href="blog.php">Blog</a></li>
+                           <li><a href="news-single.php">Blog Details</a></li>
                         </ul>
                      </li>
                      <li class="nav-item">
-                        <a href="contact.html">Contact</a>
+                        <a href="contact.php">Contact</a>
                      </li>
                      <li class="header-ticket nav-item">
-                        <a class="ticket-btn btn" href="pricing.html"> Buy  Ticket
+                        <a class="ticket-btn btn" href="pricing.php"> Buy  Ticket
                         </a>
                      </li>
                   </ul>
@@ -534,5 +531,5 @@
 </body>
 
 
-<!-- Mirrored from demo.themewinter.com/html/exhibz/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 01 Aug 2024 15:01:16 GMT -->
-</html>
+<!-- Mirrored from demo.themewinter.com/php/exhibz/index.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 01 Aug 2024 15:01:16 GMT -->
+</php>

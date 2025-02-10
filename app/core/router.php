@@ -8,10 +8,9 @@ class Router
         'POST' => []
     ];
 
-    protected $baseUrl = '/AAAA-Eventbrite-Clone/public/';
+    protected $baseUrl = '/Eventbrite-Clone/public/';
 
-    private function addRoute($route, $controller, $action, $method)
-    {
+    private function addRoute($route, $controller, $action, $method){
         $this->routes[$method][$route] = [
             'controller' => $controller, 
             'action' => $action

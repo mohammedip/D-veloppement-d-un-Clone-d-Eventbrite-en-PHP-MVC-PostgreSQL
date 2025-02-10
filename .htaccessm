@@ -1,0 +1,6 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    RewriteCond %{REQUEST_URI} !^/Eventbrite-Clone/public/
+    RewriteRule ^(.*)$ /Eventbrite-Clone/public/$1 [L,QSA]
+</IfModule>
