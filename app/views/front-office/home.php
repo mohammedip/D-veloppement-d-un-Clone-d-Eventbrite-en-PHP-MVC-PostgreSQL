@@ -1,7 +1,10 @@
 <!DOCTYPE php>
 <php lang="en">
 
-<!-- Mirrored from demo.themewinter.com/php/exhibz/index.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 01 Aug 2024 15:01:08 GMT -->
+<?php echo "mal had la9lawi"; ?>
+
+
+<!-- Mirrored from demo.themewinter.com/html/exhibz/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 01 Aug 2024 15:01:08 GMT -->
 <head>
    <!-- Basic Page Needs ================================================== -->
    <meta charset="utf-8">
@@ -53,7 +56,7 @@
          <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light">
                <!-- logo-->
-               <a class="navbar-brand" href="home.php">
+               <a class="navbar-brand" href="index.html">
                   <img src="images/logos/logo.png" alt="">
                </a>
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
@@ -67,30 +70,30 @@
                     
                      </li>
                      <li class="dropdown nav-item">
-                        <a href="about.php" class="" data-toggle="dropdown">About </i></a>
+                        <a href="about.html" class="" data-toggle="dropdown">About </i></a>
                         
                      </li>
                      <li class="nav-item dropdown">
-                        <a href="speakers.php" class="" data-toggle="dropdown">Speakers </i></a>
+                        <a href="speakers.html" class="" data-toggle="dropdown">Speakers </i></a>
                     
 
                      </li>
                      <li class="nav-item dropdown">
-                        <a href="speakers.php" class="" data-toggle="dropdown">Schedule <i class="fa fa-angle-down"></i></a>
+                        <a href="speakers.html" class="" data-toggle="dropdown">Schedule <i class="fa fa-angle-down"></i></a>
                     
                      </li>
                      <li class="nav-item dropdown">
                         <a href="#"> Blog <i class="fa fa-angle-down"></i></a>
                         <ul class="dropdown-menu" role="menu">
-                           <li><a href="blog.php">Blog</a></li>
-                           <li><a href="news-single.php">Blog Details</a></li>
+                           <li><a href="blog.html">Blog</a></li>
+                           <li><a href="news-single.html">Blog Details</a></li>
                         </ul>
                      </li>
                      <li class="nav-item">
-                        <a href="contact.php">Contact</a>
+                        <a href="contact.html">Contact</a>
                      </li>
                      <li class="header-ticket nav-item">
-                        <a class="ticket-btn btn" href="pricing.php"> Buy  Ticket
+                        <a class="ticket-btn btn" href="pricing.html"> Buy  Ticket
                         </a>
                      </li>
                   </ul>
@@ -403,99 +406,7 @@
       <!-- ts map direction end-->
 
       <!-- ts footer area start-->
-      <div class="footer-area">
-
-         <!-- ts-book-seat start-->
-         <section class="ts-book-seat" style="background-image: url(images/book_seat_img.jpg)">
-            <div class="container">
-               <div class="row">
-                  <div class="col-lg-8 mx-auto">
-                     <div class="book-seat-content text-center mb-100">
-                        <h2 class="section-title white">
-                           <span>Hurry up!</span>
-                           Book your Seat
-                        </h2>
-                        <a href="#" class="btn">Buy Ticket</a>
-                     </div><!-- book seat end-->
-                  </div><!-- col end-->
-
-               </div><!-- row end-->
-               <div class="ts-footer-newsletter">
-                  <div class="ts-newsletter" style="background-image: url(images/shap/subscribe_pattern.png)">
-                     <div class="row">
-                        <div class="col-lg-6 mx-auto">
-                           <div class="ts-newsletter-content">
-                              <h2 class="section-title">
-                                 <span>sUBSCRIBE TO nEWSLETTER</span>
-                                 Want something extra?
-                              </h2>
-                           </div>
-                           <div class="newsletter-form">
-                              <form action="#" method="post" class="media align-items-end">
-                                 <div class="email-form-group media-body">
-                                    <input type="email" name="email" id="newsletter-form-email" class="form-control"
-                                       placeholder="Your Email" autocomplete="off" required="">
-                                 </div>
-                                 <div class="d-flex ts-submit-btn">
-                                    <button class="btn">Subscribe</button>
-                                 </div>
-                              </form>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div><!-- container end-->
-         </section>
-         <!-- book seat  end-->
-
-         <!-- footer start-->
-         <footer class="ts-footer">
-            <div class="container">
-               <div class="row">
-                  <div class="col-lg-8 mx-auto">
-                     <div class="ts-footer-social text-center mb-30">
-                        <ul>
-                           <li>
-                              <a href="#"><i class="fa fa-facebook"></i></a>
-                           </li>
-                           <li>
-                              <a href="#"><i class="fa fa-twitter"></i></a>
-                           </li>
-                           <li>
-                              <a href="#"><i class="fa fa-google-plus"></i></a>
-                           </li>
-                           <li>
-                              <a href="#"><i class="fa fa-linkedin"></i></a>
-                           </li>
-                           <li>
-                              <a href="#"><i class="fa fa-instagram"></i></a>
-                           </li>
-                        </ul>
-                     </div>
-                     <!-- footer social end-->
-                     <div class="footer-menu text-center mb-25">
-                        <ul>
-                           <li><a href="#">About Eventime</a></li>
-                           <li><a href="#">Blog</a></li>
-                           <li><a href="#">Contact</a></li>
-                           <li><a href="#">Tickets</a></li>
-                           <li><a href="#">Venue</a></li>
-                        </ul>
-                     </div><!-- footer menu end-->
-                     <div class="copyright-text text-center">
-                        <p>Copyright © 2019 Exhibz. All Rights Reserved.</p>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </footer>
-         <!-- footer end-->
-         <div class="BackTo">
-            <a href="#" class="fa fa-angle-up" aria-hidden="true"></a>
-         </div>
-
-      </div>
+      <?php require_once 'footer.php' ?>
       <!-- ts footer area end-->
 
 
