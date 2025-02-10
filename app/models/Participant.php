@@ -6,7 +6,7 @@ require_once 'LoginLogoutTrait.php';
 require_once 'RegisterTrait.php';
 require_once 'RoleRedirectTrait.php';
 
-class Student extends User {
+class Participant extends User {
     use LoginLogoutTrait, RegisterTrait, RoleRedirectTrait;
 
     private $courses = [];

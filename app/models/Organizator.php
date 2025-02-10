@@ -5,10 +5,10 @@ require_once 'Database.php';
 require_once 'LoginLogoutTrait.php';
 require_once 'RegisterTrait.php';
 
-class Teacher extends User {
+class Organizator extends User {
     use LoginLogoutTrait, RegisterTrait;
 
-    public function __construct($id, $email, $name, $role = 'teacher') {
+    public function __construct($id, $email, $name, $role = 'Organizator') {
         parent::__construct($id, $email, $name, $role);
     }
 

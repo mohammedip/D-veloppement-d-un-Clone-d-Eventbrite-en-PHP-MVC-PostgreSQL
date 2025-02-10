@@ -12,7 +12,9 @@ CREATE TABLE Utilisateur (
     email VARCHAR(100) UNIQUE NOT NULL,
     motDePasse VARCHAR(255) NOT NULL,
     role_id INT,
-    FOREIGN KEY (role_id) REFERENCES Role(id)
+    FOREIGN KEY (role_id) REFERENCES Role(id),
+     is_active BOOLEAN DEFAULT true
+    
 );
 
 CREATE TABLE Evenement (
@@ -23,22 +25,19 @@ CREATE TABLE Evenement (
     lieu VARCHAR(200),
     prix FLOAT NOT NULL,
     capacite INT NOT NULL,
-    statut VARCHAR(50) NOT NULL
-    image_url VARCHAR(255)
+    statut VARCHAR(50) NOT NULL,
+    is_verified BOOLEAN DEFAULT false,
+    categorie_id INT,
+    image_url VARCHAR(255),
+    FOREIGN KEY (categorie_id) REFERENCES Categorie(id) ON DELETE CASCADE
 );
+
 
 CREATE TABLE Categorie (
     id INT PRIMARY KEY AUTO_INCREMENT,
     nom VARCHAR(100) NOT NULL
 );
 
-CREATE TABLE Evenement_Categorie (
-    evenement_id INT,
-    categorie_id INT,
-    PRIMARY KEY (evenement_id, categorie_id),
-    FOREIGN KEY (evenement_id) REFERENCES Evenement(id) ON DELETE CASCADE,
-    FOREIGN KEY (categorie_id) REFERENCES Categorie(id) ON DELETE CASCADE
-);
 
 CREATE TABLE Tag (
     id INT PRIMARY KEY AUTO_INCREMENT,

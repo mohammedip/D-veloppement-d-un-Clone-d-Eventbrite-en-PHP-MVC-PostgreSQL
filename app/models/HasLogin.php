@@ -2,10 +2,8 @@
 
 trait LoginTrait {
     public function login($email, $password) {
-        $db = Database::getInstance()->getConnection();
-        $query = $db->prepare("SELECT * FROM users WHERE email = ?");
-        $query->execute([$email]);
-        $user = $query->fetch();
+
+        $user = =CRUD::select('users', '*', 'email = ?', [$email]);
 
         if ($user && password_verify($password, $user['password'])) {
             if ($user['role'] !== $this->role) {

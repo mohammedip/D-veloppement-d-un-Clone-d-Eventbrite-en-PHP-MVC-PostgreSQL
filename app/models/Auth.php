@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Utils;
+namespace App\model;
 
 class Auth {
     public static function checkAccess($requiredRole) {
@@ -14,22 +14,3 @@ class Auth {
         return isset($_SESSION['user_id']);
     }
 }
-
-
-
-// require_once 'Utils/Auth.php';
-
-// use App\Utils\Auth;
-
-session_start();
-
-Auth::checkAccess('Teacher');
-
-// Page content for teachers
-echo "Welcome, Teacher {$_SESSION['name']}";
-
-
-Auth::checkAccess('Student');
-
-// Page content for students
-echo "Welcome, Student {$_SESSION['name']}";

@@ -1,6 +1,6 @@
 <?php
 
-class Enrollment {
+class SUbscriptions {
     private $studentId;
     private $courseId;
     private $enrollmentDate;

@@ -7,8 +7,6 @@ require_once 'LoginLogoutTrait.php';
 class Admin extends User {
     use LoginLogoutTrait;
 
-    private $managedUsers = [];
-    private $managedCourses = [];
 
     public function __construct($id, $email, $name, $role = 'admin') {
         parent::__construct($id, $email, $name, $role);
