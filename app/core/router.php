@@ -1,14 +1,14 @@
 <?php
-namespace App\core;
+namespace App\Core;
 
-use App\Middleware\AuthMiddleware;
-
-class Router extends Controller
+class Router
 {
     protected $routes = [
         'GET' => [],
         'POST' => []
     ];
+
+    protected $baseUrl = '/AAAA-Eventbrite-Clone/public/';
 
     private function addRoute($route, $controller, $action, $method)
     {
@@ -30,24 +30,31 @@ class Router extends Controller
 
     public function dispatch()
     {
+        // Normalize the URI by removing base URL
         $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+        $uri = str_replace($this->baseUrl, '/', $uri);
+        $uri = $uri ?: '/';
+
         $method = $_SERVER['REQUEST_METHOD'];
 
         $matchedRoute = null;
-        foreach ($this->routes[$method] as $route => $routeInfo) {
-            $pattern = preg_replace('/\{([^}]+)\}/', '(?P<$1>[^/]+)', $route);
-            $pattern = str_replace('/', '\/', $pattern);
-            
-            if (preg_match("/^$pattern$/", $uri, $matches)) {
-                $matchedRoute = $routeInfo;
-                $params = array_filter($matches, 'is_string', ARRAY_FILTER_USE_KEY);
-                break;
-            }
-        }
+        $params = [];
 
-        if (!$matchedRoute && isset($this->routes[$method][$uri])) {
+        // First, try exact match
+        if (isset($this->routes[$method][$uri])) {
             $matchedRoute = $this->routes[$method][$uri];
-            $params = [];
+        } else {
+            // Try pattern matching
+            foreach ($this->routes[$method] as $route => $routeInfo) {
+                $pattern = preg_replace('/\{([^}]+)\}/', '(?P<$1>[^/]+)', $route);
+                $pattern = str_replace('/', '\/', $pattern);
+                
+                if (preg_match("/^$pattern$/", $uri, $matches)) {
+                    $matchedRoute = $routeInfo;
+                    $params = array_filter($matches, 'is_string', ARRAY_FILTER_USE_KEY);
+                    break;
+                }
+            }
         }
 
         if ($matchedRoute) {
@@ -60,7 +67,19 @@ class Router extends Controller
                 call_user_func_array([$controller, $action], array_values($params));
             }
         } else {
-            $this->render('404');
+            // If no route matches, redirect to 404
+            header("HTTP/1.0 404 Not Found");
+            $controller = new \App\Controllers\PageController();
+            $controller->notFound();
         }
+    }
+
+    // Optional: Debug method to help troubleshoot routing
+    public function debugRoutes()
+    {
+        echo "Current URI: " . $_SERVER['REQUEST_URI'] . "<br>";
+        echo "Normalized URI: " . str_replace($this->baseUrl, '/', parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)) . "<br>";
+        echo "Registered Routes:<br>";
+        print_r($this->routes['GET']);
     }
 }
