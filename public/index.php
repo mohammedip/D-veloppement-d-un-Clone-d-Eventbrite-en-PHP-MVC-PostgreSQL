@@ -4,7 +4,6 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 use App\Core\Router;
 use App\Controllers\PageController;
-use App\Controllers\AdminAuthController;
 use App\Controllers\AuthController;
 use App\Middleware\AuthMiddleware;
 
@@ -38,16 +37,16 @@ $router->before('/admin/*', function () {
 });
 
 // Admin routes
-$router->get('/admin', AdminAuthController::class, 'dashboard');
-$router->get('/admin/home', AdminAuthController::class, 'home');
-$router->get('/admin/contact', AdminAuthController::class, 'contact');
-$router->get('/admin/courses', AdminAuthController::class, 'events'); 
-$router->get('/admin/playlist', AdminAuthController::class, 'playlist');
-$router->get('/admin/profile', AdminAuthController::class, 'profile');
-$router->get('/admin/teachers', AdminAuthController::class, 'teachers');
-$router->get('/admin/teacher-profile', AdminAuthController::class, 'teacherProfile');
-$router->get('/admin/update', AdminAuthController::class, 'update');
-$router->get('/admin/watch-video', AdminAuthController::class, 'watchVideo');
+$router->get('/admin', AuthController::class, 'dashboard');
+$router->get('/admin/home', AuthController::class, 'home');
+$router->get('/admin/contact', AuthController::class, 'contact');
+$router->get('/admin/courses', AuthController::class, 'events'); 
+$router->get('/admin/playlist', AuthController::class, 'playlist');
+$router->get('/admin/profile', AuthController::class, 'profile');
+$router->get('/admin/teachers', AuthController::class, 'teachers');
+$router->get('/admin/teacher-profile', AuthController::class, 'teacherProfile');
+$router->get('/admin/update', AuthController::class, 'update');
+$router->get('/admin/watch-video', AuthController::class, 'watchVideo');
 
 // Dispatch all routes
 $router->dispatch();
