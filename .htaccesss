@@ -1,8 +1,8 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    RewriteBase /AAAA-Eventbrite-Clone/
+    RewriteBase /Eventbrite-Clone/
     
     # Redirect all requests to public directory
-    RewriteCond %{REQUEST_URI} !^/AAAA-Eventbrite-Clone/public/
+    RewriteCond %{REQUEST_URI} !^/Eventbrite-Clone/public/
     RewriteRule ^(.*)$ public/$1 [L]
 </IfModule>
