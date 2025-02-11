@@ -21,10 +21,11 @@
          <h3 class="name">shaikh anas</h3>
          <p class="role">studen</p>
          <a href="profile.php" class="btn">view profile</a>
-         <!-- <div class="flex-btn">
-            <a href="login.php" class="option-btn">login</a>
-            <a href="register.php" class="option-btn">register</a>
-         </div> -->
+
+         <div class="flex-btn">
+            <a href="../front-office/login.php" class="option-btn">log Out</a>
+            <!-- <a href="register.php" class="option-btn">register</a> -->
+         </div>
       </div>
 
    </section>
