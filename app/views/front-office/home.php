@@ -1,5 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE php>
+<php lang="en">
+
+
+
 
 <!-- Mirrored from demo.themewinter.com/html/exhibz/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 01 Aug 2024 15:01:08 GMT -->
 <head>
@@ -11,7 +14,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
 
    <!-- Site Title -->
-   <title>Exhibz - Conference &amp; Event HTML Template</title>
+   <title>Exhibz - Conference &amp; Event php Template</title>
 
 
 
@@ -37,10 +40,10 @@
    <!-- Responsive styles-->
    <link rel="stylesheet" href="css/responsive.css">
 
-   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+   <!-- php5 shim and Respond.js IE8 support of php5 elements and media queries -->
    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/php5shiv/3.7.2/php5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
       <![endif]-->
 
@@ -403,99 +406,7 @@
       <!-- ts map direction end-->
 
       <!-- ts footer area start-->
-      <div class="footer-area">
-
-         <!-- ts-book-seat start-->
-         <section class="ts-book-seat" style="background-image: url(images/book_seat_img.jpg)">
-            <div class="container">
-               <div class="row">
-                  <div class="col-lg-8 mx-auto">
-                     <div class="book-seat-content text-center mb-100">
-                        <h2 class="section-title white">
-                           <span>Hurry up!</span>
-                           Book your Seat
-                        </h2>
-                        <a href="#" class="btn">Buy Ticket</a>
-                     </div><!-- book seat end-->
-                  </div><!-- col end-->
-
-               </div><!-- row end-->
-               <div class="ts-footer-newsletter">
-                  <div class="ts-newsletter" style="background-image: url(images/shap/subscribe_pattern.png)">
-                     <div class="row">
-                        <div class="col-lg-6 mx-auto">
-                           <div class="ts-newsletter-content">
-                              <h2 class="section-title">
-                                 <span>sUBSCRIBE TO nEWSLETTER</span>
-                                 Want something extra?
-                              </h2>
-                           </div>
-                           <div class="newsletter-form">
-                              <form action="#" method="post" class="media align-items-end">
-                                 <div class="email-form-group media-body">
-                                    <input type="email" name="email" id="newsletter-form-email" class="form-control"
-                                       placeholder="Your Email" autocomplete="off" required="">
-                                 </div>
-                                 <div class="d-flex ts-submit-btn">
-                                    <button class="btn">Subscribe</button>
-                                 </div>
-                              </form>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div><!-- container end-->
-         </section>
-         <!-- book seat  end-->
-
-         <!-- footer start-->
-         <footer class="ts-footer">
-            <div class="container">
-               <div class="row">
-                  <div class="col-lg-8 mx-auto">
-                     <div class="ts-footer-social text-center mb-30">
-                        <ul>
-                           <li>
-                              <a href="#"><i class="fa fa-facebook"></i></a>
-                           </li>
-                           <li>
-                              <a href="#"><i class="fa fa-twitter"></i></a>
-                           </li>
-                           <li>
-                              <a href="#"><i class="fa fa-google-plus"></i></a>
-                           </li>
-                           <li>
-                              <a href="#"><i class="fa fa-linkedin"></i></a>
-                           </li>
-                           <li>
-                              <a href="#"><i class="fa fa-instagram"></i></a>
-                           </li>
-                        </ul>
-                     </div>
-                     <!-- footer social end-->
-                     <div class="footer-menu text-center mb-25">
-                        <ul>
-                           <li><a href="#">About Eventime</a></li>
-                           <li><a href="#">Blog</a></li>
-                           <li><a href="#">Contact</a></li>
-                           <li><a href="#">Tickets</a></li>
-                           <li><a href="#">Venue</a></li>
-                        </ul>
-                     </div><!-- footer menu end-->
-                     <div class="copyright-text text-center">
-                        <p>Copyright © 2019 Exhibz. All Rights Reserved.</p>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </footer>
-         <!-- footer end-->
-         <div class="BackTo">
-            <a href="#" class="fa fa-angle-up" aria-hidden="true"></a>
-         </div>
-
-      </div>
+      <?php require_once 'footer.php' ?>
       <!-- ts footer area end-->
 
 
@@ -531,5 +442,5 @@
 </body>
 
 
-<!-- Mirrored from demo.themewinter.com/html/exhibz/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 01 Aug 2024 15:01:16 GMT -->
-</html>
+<!-- Mirrored from demo.themewinter.com/php/exhibz/index.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 01 Aug 2024 15:01:16 GMT -->
+</php>
