@@ -41,7 +41,7 @@
                        <a href="login.php">Login</a>
                     </li>
                     <li class="nav-item">
-                       <a href="register.php">Login</a>
+                       <a href="register.php">register</a>
                     </li>
                  
                     <li class="header-ticket nav-item">

@@ -163,7 +163,7 @@
          <!-- Subpage title start -->
          <div class="page-banner-title">
             <div class="text-center">
-               <h2>Login ..</h2>
+               <h2>REGISTER ..</h2>
                <!-- <ol class="breadcrumb">
                   <li>
                      <a href="#">Exibit /</a>
