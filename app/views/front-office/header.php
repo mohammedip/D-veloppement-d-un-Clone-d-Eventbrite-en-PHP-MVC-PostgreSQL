@@ -12,7 +12,7 @@
               <div class="collapse navbar-collapse" id="navbarNavDropdown">
                  <ul class="navbar-nav ml-auto">
                     <li class="dropdown nav-item active">
-                       <a href="index.php" class="" data-toggle="dropdown">Home</a>
+                       <a href="home.php" class="" data-toggle="dropdown">Home</a>
                    
                     </li>
                     <li class="dropdown nav-item">
