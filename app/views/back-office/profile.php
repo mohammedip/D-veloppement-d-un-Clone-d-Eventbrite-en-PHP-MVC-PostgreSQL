@@ -15,61 +15,13 @@
 </head>
 <body>
 
-<header class="header">
-   
-   <section class="flex">
+  <!-- start header  -->
+  <?php require_once "header.php" ?>
+  <!-- end header  -->
 
-      <a href="home.php" class="logo">Educa.</a>
-
-      <form action="search.php" method="post" class="search-form">
-         <input type="text" name="search_box" required placeholder="search courses..." maxlength="100">
-         <button type="submit" class="fas fa-search"></button>
-      </form>
-
-      <div class="icons">
-         <div id="menu-btn" class="fas fa-bars"></div>
-         <div id="search-btn" class="fas fa-search"></div>
-         <div id="user-btn" class="fas fa-user"></div>
-         <div id="toggle-btn" class="fas fa-sun"></div>
-      </div>
-
-      <div class="profile">
-         <img src="images/pic-1.jpg" class="image" alt="">
-         <h3 class="name">shaikh anas</h3>
-         <p class="role">studen</p>
-         <a href="profile.php" class="btn">view profile</a>
-         <!-- <div class="flex-btn">
-            <a href="login.php" class="option-btn">login</a>
-            <a href="register.php" class="option-btn">register</a>
-         </div> -->
-      </div>
-
-   </section>
-
-</header>   
-
-<div class="side-bar">
-
-   <div id="close-btn">
-      <i class="fas fa-times"></i>
-   </div>
-
-   <div class="profile">
-      <img src="images/pic-1.jpg" class="image" alt="">
-      <h3 class="name">shaikh anas</h3>
-      <p class="role">studen</p>
-      <a href="profile.php" class="btn">view profile</a>
-   </div>
-
-   <nav class="navbar">
-      <a href="home.php"><i class="fas fa-home"></i><span>home</span></a>
-      <a href="about.php"><i class="fas fa-question"></i><span>about</span></a>
-      <a href="courses.php"><i class="fas fa-graduation-cap"></i><span>courses</span></a>
-      <a href="teachers.php"><i class="fas fa-chalkboard-user"></i><span>teachers</span></a>
-      <a href="contact.php"><i class="fas fa-headset"></i><span>contact us</span></a>
-   </nav>
-
-</div>
+<!-- side bar start  -->
+ <?php require_once "sideBar.php" ?>
+<!-- side bar end  -->
 
 <section class="user-profile">
 
@@ -137,11 +89,9 @@
 
 
 
-<footer class="footer">
-
-   &copy; copyright @ 2022 by <span>mr. web designer</span> | all rights reserved!
-
-</footer>
+<!-- start footer -->
+<?php require_once "footer.php" ?>
+<!-- end footer -->
 
 <!-- custom js file link  -->
 <script src="js/script.js"></script>
