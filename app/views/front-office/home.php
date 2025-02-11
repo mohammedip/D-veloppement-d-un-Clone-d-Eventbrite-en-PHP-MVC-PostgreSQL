@@ -136,7 +136,8 @@
                         </div>
                         <!-- Countdown end -->
                         <div class="banner-btn wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="800ms">
-                           <a href="#" class="btn">Buy Ticket</a>
+                        <a href="/checkout" class="btn btn-primary">Buy TICKET</a>
+
                         </div>
 
                      </div>

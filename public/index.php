@@ -5,6 +5,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 use App\Core\Router;
 use App\Controllers\PageController;
 use App\Controllers\AuthController;
+use App\Controllers\PaymentController;
 use App\Middleware\AuthMiddleware;
 
 session_start();
@@ -31,7 +32,7 @@ $router->get('/login', AuthController::class, 'login');
 $router->post('/login', AuthController::class, 'processLogin');
 $router->get('/logout', AuthController::class, 'logout');
 
-// Admin Routes kadoz mn lmiddlware 
+// Admin Routes - Apply Middleware
 $router->before('/admin/*', function () {
     AuthMiddleware::checkAdmin();
 });
@@ -47,6 +48,10 @@ $router->get('/admin/teachers', AuthController::class, 'teachers');
 $router->get('/admin/teacher-profile', AuthController::class, 'teacherProfile');
 $router->get('/admin/update', AuthController::class, 'update');
 $router->get('/admin/watch-video', AuthController::class, 'watchVideo');
+
+// 
+$router->get('/checkout', PaymentController::class, 'checkout');
+$router->post('/stripe-webhook', PaymentController::class, 'handleWebhook');
 
 // Dispatch all routes
 $router->dispatch();

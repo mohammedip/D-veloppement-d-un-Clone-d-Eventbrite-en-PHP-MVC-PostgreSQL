@@ -156,7 +156,7 @@
                      <p>
                         How you transform your business as technology, consumer, habits industrys dynamic
                      </p>
-                     <a href="#" class="btn btn-round">Buy Ticket</a>
+                     <a href="/AAAA-Eventbrite-Clone/checkout" class="btn btn-round">Buy Ticket</a>
                   </div>
                </div><!-- col end-->
                <div class="col-lg-4">
