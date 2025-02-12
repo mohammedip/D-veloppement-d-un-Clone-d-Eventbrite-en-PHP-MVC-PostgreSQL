@@ -1,6 +1,6 @@
 <?php
-
-abstract class User {
+namespace App\models;
+class User {
     protected $id;
     protected $email;
     protected $name;

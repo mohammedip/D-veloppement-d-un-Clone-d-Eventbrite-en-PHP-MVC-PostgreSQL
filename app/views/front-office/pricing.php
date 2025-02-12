@@ -128,7 +128,7 @@
                         </div>
                         <div class="promotional-code">
                            <p class="promo-code-text">Enter Promotional Code</p>
-                           <a href="#" class="btn pricing-btn">Buy Ticket</a>
+                           <a href="/Eventbrite-Clone/checkout" class="btn pricing-btn">Buy Ticket</a>
                            <p class="vate-text">All prices exclude 25% VAT</p>
                         </div>
                      </div><!-- ts pricing box-->
