@@ -1,8 +1,12 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteBase /Eventbrite-Clone/
-    
-    # Redirect all requests to public directory
+
+    # Allow direct access to CSS, JS, Images, and Fonts
+    RewriteCond %{REQUEST_URI} \.(css|js|jpg|jpeg|png|gif|svg|webp|ico|woff|woff2|ttf|eot|otf)$ [NC]
+    RewriteRule ^ - [L]
+
+    # Redirect everything else to /public/
     RewriteCond %{REQUEST_URI} !^/Eventbrite-Clone/public/
-    RewriteRule ^(.*)$ public/$1 [L]
+    RewriteRule ^(.*)$ /Eventbrite-Clone/public/$1 [L]
 </IfModule>

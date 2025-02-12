@@ -10,7 +10,7 @@ class Router
     ];
 
     protected $beforeHooks = []; 
-    protected $baseUrl = '/AAAA-Eventbrite-Clone/'; 
+    protected $baseUrl = '/Eventbrite-Clone/'; 
 
     private function addRoute($route, $controller, $action, $method)
     {

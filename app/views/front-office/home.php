@@ -18,24 +18,24 @@
    <!-- CSS
          ================================================== -->
    <!-- Bootstrap -->
-   <link rel="stylesheet" href="/AAAA-Eventbrite-Clone/app/views/front-office/css/bootstrap.min.css">
+   <link rel="stylesheet" href="/Eventbrite-Clone/app/views/front-office/css/bootstrap.min.css">
 
    <!-- FontAwesome -->
-   <link rel="stylesheet" href="/AAAA-Eventbrite-Clone/app/views/front-office/css/font-awesome.min.css">
+   <link rel="stylesheet" href="/Eventbrite-Clone/app/views/front-office/css/font-awesome.min.css">
    <!-- Animation -->
-   <link rel="stylesheet" href="/AAAA-Eventbrite-Clone/app/views/front-office/css/animate.css">
+   <link rel="stylesheet" href="/Eventbrite-Clone/app/views/front-office/css/animate.css">
    <!-- magnific -->
-   <link rel="stylesheet" href="/AAAA-Eventbrite-Clone/app/views/front-office/css/magnific-popup.css">
+   <link rel="stylesheet" href="/Eventbrite-Clone/app/views/front-office/css/magnific-popup.css">
    <!-- carousel -->
-   <link rel="stylesheet" href="/AAAA-Eventbrite-Clone/app/views/front-office/css/owl.carousel.min.css">
+   <link rel="stylesheet" href="/Eventbrite-Clone/app/views/front-office/css/owl.carousel.min.css">
    <!-- isotop -->
-   <link rel="stylesheet" href="/AAAA-Eventbrite-Clone/app/views/front-office/css/isotop.css">
+   <link rel="stylesheet" href="/Eventbrite-Clone/app/views/front-office/css/isotop.css">
    <!-- ico fonts -->
-   <link rel="stylesheet" href="/AAAA-Eventbrite-Clone/app/views/front-office/css/xsIcon.css">
+   <link rel="stylesheet" href="/Eventbrite-Clone/app/views/front-office/css/xsIcon.css">
    <!-- Template styles-->
-   <link rel="stylesheet" href="/AAAA-Eventbrite-Clone/app/views/front-office/css/style.css">
+   <link rel="stylesheet" href="/Eventbrite-Clone/app/views/front-office/css/style.css">
    <!-- Responsive styles-->
-   <link rel="stylesheet" href="/AAAA-Eventbrite-Clone/app/views/front-office/css/responsive.css">
+   <link rel="stylesheet" href="/Eventbrite-Clone/app/views/front-office/css/responsive.css">
 
    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
