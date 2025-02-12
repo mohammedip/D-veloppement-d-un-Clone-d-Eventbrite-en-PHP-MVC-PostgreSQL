@@ -16,7 +16,7 @@
 
 
       <a href="myEvents.php"><i class="fas fa-graduation-cap"></i><span>My Events</span></a>
-      <a href="users.php"><i class="fas fa-chalkboard-user"></i><span>Users</span></a>
+      <a href="users.php"><i class="fas fa-chalkboard-user"></i><span> Tecket</span></a>
       <a href="contact.php"><i class="fas fa-chalkboard-user"></i><span>Contact</span></a>
 
    </nav>
