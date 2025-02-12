@@ -2,6 +2,9 @@
 
 namespace App\Controllers;
 
+require_once __DIR__ . '/../models/Event.php';
+
+
 class PageController {
     public function home() {
         require_once __DIR__ . "/../views/front-office/home.php"; 
@@ -49,5 +52,10 @@ class PageController {
 
     public function notFound() {
         require_once __DIR__ . "/../views/front-office/404.php";
+    }
+
+    public function getUpcomingEvents() {
+        $events = $this->Event->getUpcomingEvents(); 
+        echo json_encode($events);  
     }
 }

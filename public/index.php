@@ -52,6 +52,8 @@ $router->get('/admin/watch-video', AuthController::class, 'watchVideo');
 // 
 $router->get('/checkout', PaymentController::class, 'checkout');
 $router->post('/stripe-webhook', PaymentController::class, 'handleWebhook');
+$router->post('/handle-payment', PaymentController::class, 'handleDirectPayment');
+$router->get('/get-stripe-key', 'StripeController@getPublicKey');
 
 // Dispatch all routes
 $router->dispatch();

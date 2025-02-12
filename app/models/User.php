@@ -1,12 +1,15 @@
 <?php
 
-abstract class User {
+namespace app\models;
+
+class User {
     protected $id;
     protected $email;
     protected $name;
     protected $role;
 
-    public function __construct($id, $email, $name, $role) {
+    // Add default null values
+    public function __construct($id = null, $email = null, $name = null, $role = null) {
         $this->id = $id;
         $this->email = $email;
         $this->name = $name;
@@ -25,6 +28,4 @@ abstract class User {
             'role' => $this->role
         ];
     }
-
 }
-

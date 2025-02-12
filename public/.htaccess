@@ -2,7 +2,7 @@
     RewriteEngine On
     
     # Set base directory
-    RewriteBase /AAAA-Eventbrite-Clone/
+    RewriteBase /Eventbrite-Clone/
 
     # Prevent direct access to PHP files except index.php
     RewriteCond %{THE_REQUEST} /([^/]+\.php) [NC]
