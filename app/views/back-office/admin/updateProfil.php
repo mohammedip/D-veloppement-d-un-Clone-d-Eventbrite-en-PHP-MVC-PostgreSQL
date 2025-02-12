@@ -59,7 +59,9 @@
 
 
 <!-- start footer -->
-<?php require_once "footer.php" ?>
+<?php 
+// require_once "footer.php"
+ ?>
 <!-- end footer -->
 
 <!-- custom js file link  -->
