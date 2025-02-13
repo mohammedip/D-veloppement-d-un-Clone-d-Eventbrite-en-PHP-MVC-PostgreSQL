@@ -1,9 +1,9 @@
 <?php 
 
 namespace App;
-use Src\Database;
+use app\config\Database;
 
-require_once dirname(__DIR__) . './vendor/autoload.php'; 
+require_once dirname(__DIR__) . '../vendor/autoload.php'; 
 
 class CRUD {
     private static $pdo;

@@ -178,19 +178,16 @@
 <!-- regester login form -->
 <div class="register-container" style="margin: auto; margin-top: 100px; margin-bottom: 100px;">
   <h2>Create Account</h2>
-  <form>
+  <form action="" method="POST" >
       <div class="input-row">
           <div class="input-group">
-              <input type="text" required>
-              <label>First Name</label>
+              <input type="text" name="username" required>
+              <label>Full Name</label>
           </div>
-          <div class="input-group">
-              <input type="text" required>
-              <label>Last Name</label>
-          </div>
+      
       </div>
       <div class="input-group">
-          <input type="email" required>
+          <input type="email" name="email" required>
           <label>Email Address</label>
       </div>
       <div class="input-group">
@@ -198,12 +195,12 @@
           <label>Phone Number</label>
       </div>
       <div class="input-group">
-          <input type="password" required>
+          <input type="password" name="password" required>
           <label>Password</label>
         
       </div>
       <div class="input-group">
-          <input type="password" required>
+          <input type="password" name="confirm_password" required>
           <label>Confirm Password</label>
       </div>
       <div class="terms">

@@ -24,12 +24,15 @@ $router->get('/venue', PageController::class, 'venue');
 $router->get('/schedule', PageController::class, 'schedule');
 $router->get('/blog', PageController::class, 'blog');
 $router->get('/speakers', PageController::class, 'speakers');
+$router->get('/login', PageController::class, 'login');
+$router->get('/register', PageController::class, 'register');
 
 $router->get('/404', PageController::class, 'notFound');
 
 // Login/Logout Routes
 $router->get('/login', AuthController::class, 'login');
 $router->post('/login', AuthController::class, 'processLogin');
+$router->post('/register', AuthController::class, 'processRegister');
 $router->get('/logout', AuthController::class, 'logout');
 
 // Admin Routes - Apply Middleware

@@ -1,9 +1,10 @@
 <?php
+namespace App\models;
 
 trait LoginTrait {
     public function login($email, $password) {
 
-        $user = =CRUD::select('users', '*', 'email = ?', [$email]);
+        $user =CRUD::select('users', '*', 'email = ?', [$email]);
 
         if ($user && password_verify($password, $user['password'])) {
             if ($user['role'] !== $this->role) {

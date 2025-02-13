@@ -50,4 +50,12 @@ class PageController {
     public function notFound() {
         require_once __DIR__ . "/../views/front-office/404.php";
     }
+
+    public function login() {
+        require_once __DIR__ . "/../views/front-office/login.php";
+    }
+
+    public function register() {
+        require_once __DIR__ . "/../views/front-office/register.php";
+    }
 }

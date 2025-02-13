@@ -7,7 +7,7 @@ use App\Core\Security;
 use App\Core\SessionManager;
 use App\Models\User;
 
-class AuthController extends Controller
+class   AuthController extends Controller
 {
     private $userModel;
     private $validator;
@@ -26,14 +26,14 @@ class AuthController extends Controller
     {
         // Generate CSRF token
         $csrfToken = Security::generateCSRFToken();
-        $this->render('auth/login', ['csrf_token' => $csrfToken]);
+        $this->render('front-office/login', ['csrf_token' => $csrfToken]);
     }
 
     // Process login
     public function processLogin()
     {
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-            header('Location: /login');
+            header('Location:front-office/login');
             exit;
         }
 
@@ -41,7 +41,7 @@ class AuthController extends Controller
         $csrfToken = $_POST['csrf_token'] ?? '';
         if (!Security::validateCSRFToken($csrfToken)) {
             $errors['csrf'] = 'Invalid CSRF token';
-            $this->render('auth/login', ['errors' => $errors]);
+            $this->render('front-office/login', ['errors' => $errors]);
             return;
         }
 
@@ -51,7 +51,7 @@ class AuthController extends Controller
 
         if ($this->validator->fails()) {
             $errors = $this->validator->getErrors();
-            $this->render('auth/login', ['errors' => $errors]);
+            $this->render('front-office/login', ['errors' => $errors]);
             return;
         }
 
@@ -65,7 +65,7 @@ class AuthController extends Controller
         } else {
             // Login failed
             $errors['login'] = 'Invalid email or password';
-            $this->render('auth/login', ['errors' => $errors]);
+            $this->render('front-office/login', ['errors' => $errors]);
         }
     }
 
@@ -74,14 +74,14 @@ class AuthController extends Controller
     {
         // Generate CSRF token
         $csrfToken = Security::generateCSRFToken();
-        $this->render('auth/register', ['csrf_token' => $csrfToken]);
+        $this->render('front-office/register', ['csrf_token' => $csrfToken]);
     }
 
     // Process registration
     public function processRegister()
     {
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-            header('Location: /register');
+            header('Location:front-office/register');
             exit;
         }
 
@@ -89,7 +89,7 @@ class AuthController extends Controller
         $csrfToken = $_POST['csrf_token'] ?? '';
         if (!Security::validateCSRFToken($csrfToken)) {
             $errors['csrf'] = 'Invalid CSRF token';
-            $this->render('auth/register', ['errors' => $errors]);
+            $this->render('front-office/register', ['errors' => $errors]);
             return;
         }
 
@@ -99,6 +99,10 @@ class AuthController extends Controller
         $password = $this->validator->password($_POST['password']);
         $confirmPassword = $_POST['confirm_password'];
 
+      
+
+
+
         // Check password confirmation
         if ($password !== $confirmPassword) {
             $this->validator->getErrors()['confirm_password'] = 'Passwords do not match';
@@ -106,7 +110,7 @@ class AuthController extends Controller
 
         if ($this->validator->fails()) {
             $errors = $this->validator->getErrors();
-            $this->render('auth/register', ['errors' => $errors]);
+            $this->render('front-office/register', ['errors' => $errors]);
             return;
         }
 
@@ -114,11 +118,11 @@ class AuthController extends Controller
         $registered = $this->userModel->register($username, $email, $password);
         if ($registered) {
             // Registration successful, redirect to login
-            header('Location: /login');
+            header('Location:front-office/login');
             exit;
         } else {
             $errors['register'] = 'Registration failed. Email might already be in use.';
-            $this->render('auth/register', ['errors' => $errors]);
+            $this->render('front-office/register', ['errors' => $errors]);
         }
     }
 
@@ -126,7 +130,7 @@ class AuthController extends Controller
     public function logout()
     {
         $this->sessionManager->destroy();
-        header('Location: /login');
+        header('Location:front-office/login');
         exit;
     }
 }

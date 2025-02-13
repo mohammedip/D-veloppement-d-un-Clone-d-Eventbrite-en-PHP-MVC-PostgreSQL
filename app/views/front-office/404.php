@@ -82,7 +82,7 @@
                      </div>
                      <div class="error-body">
                         Try using the button below to go to main page of the site <br>
-                        <a href="index.html" class="btn">Back to Home Page</a>
+                        <a href="" class="btn">Back to Home Page</a>
                      </div>
                   </div>
                </div>
