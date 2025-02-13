@@ -35,6 +35,8 @@
    <!-- Responsive styles-->
    <link rel="stylesheet" href="css/responsive.css">
 
+   <script src="https://js.stripe.com/v3/"></script>
+
    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
    <!--[if lt IE 9]>
@@ -128,7 +130,66 @@
                         </div>
                         <div class="promotional-code">
                            <p class="promo-code-text">Enter Promotional Code</p>
-                           <a href="/Eventbrite-Clone/checkout" class="btn pricing-btn">Buy Ticket</a>
+                           <!-- Button to open the modal -->
+<button id="buy-ticket-btn">Buy Ticket</button>
+
+<!-- Modal -->
+<div id="stripe-modal">
+    <div class="modal-content">
+        <span id="close-modal-btn">&times;</span> <!-- Close button -->
+        <h2>Enter Payment Details</h2>
+        <form id="payment-form">
+            <div id="card-element"></div> <!-- Stripe input field -->
+            <button type="submit">Pay Now</button>
+        </form>
+    </div>
+</div>
+
+
+<style>
+/* Fullscreen Modal */
+#stripe-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Content */
+.modal-content {
+    background: white;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+/* Close Button */
+#close-modal-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* Stripe Input Styling */
+#card-element {
+    background: #f8f8f8;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+</style>
+
                            <p class="vate-text">All prices exclude 25% VAT</p>
                         </div>
                      </div><!-- ts pricing box-->
@@ -294,9 +355,12 @@
 
       <!-- Template custom -->
       <script src="js/main.js"></script>
+      <!-- front-officejs -->
+      <script src="js/forntOffice.js"></script>
    </div>
    <!-- Body inner end -->
 </body>
+
 
 
 <!-- Mirrored from demo.themewinter.com/html/exhibz/pricing.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 01 Aug 2024 15:00:59 GMT -->

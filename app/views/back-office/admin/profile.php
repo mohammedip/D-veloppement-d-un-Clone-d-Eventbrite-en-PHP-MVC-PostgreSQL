@@ -8,7 +8,7 @@
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
-   <script src="https://cdn.tailwindcss.com"></script>
+
    <!-- custom css file link  -->
    <link rel="stylesheet" href="css/style.css">
 
@@ -36,99 +36,42 @@
          <a href="update.html" class="inline-btn">update profile</a>
       </div>
    
-      <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-      <div class="bg-white overflow-hidden shadow rounded-lg">
-        <div class="p-5">
-          <div class="flex items-center">
-            <div class="flex-shrink-0">
-              <div class="rounded-md bg-indigo-500 p-4">
-                <i class="fas fa-users text-white text-2xl"></i>
-              </div>
+      <div class="box-container">
+   
+         <div class="box">
+            <div class="flex">
+               <i class="fas fa-bookmark"></i>
+               <div>
+                  <span>4</span>
+                  <p>saved playlist</p>
+               </div>
             </div>
-            <div class="ml-5 w-0 flex-1">
-              <dl>
-                <dt class="text-base font-medium text-gray-500 truncate">Total User get tecket</dt>
-                <dd class="text-2xl font-semibold text-gray-900">250</dd>
-              </dl>
+            <a href="#" class="inline-btn">view playlists</a>
+         </div>
+   
+         <div class="box">
+            <div class="flex">
+               <i class="fas fa-heart"></i>
+               <div>
+                  <span>33</span>
+                  <p>videos liked</p>
+               </div>
             </div>
-          </div>
-        </div>
-        <div class="bg-gray-50 px-5 py-3">
-          <div class="text-lg">
-            <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">Voir tous</a>
-          </div>
-        </div>
+            <a href="#" class="inline-btn">view liked</a>
+         </div>
+   
+         <div class="box">
+            <div class="flex">
+               <i class="fas fa-comment"></i>
+               <div>
+                  <span>12</span>
+                  <p>videos comments</p>
+               </div>
+            </div>
+            <a href="#" class="inline-btn">view comments</a>
+         </div>
+   
       </div>
-
-      <div class="bg-white overflow-hidden shadow rounded-lg">
-        <div class="p-5">
-          <div class="flex items-center">
-            <div class="flex-shrink-0">
-              <div class="rounded-md bg-green-500 p-4">
-                <i class="fas fa-chalkboard-teacher text-white text-2xl"></i>
-              </div>
-            </div>
-            <div class="ml-5 w-0 flex-1">
-              <dl>
-                <dt class="text-base font-medium text-gray-500 truncate">Events Actifs</dt>
-                <dd class="text-2xl font-semibold text-gray-900">45</dd>
-              </dl>
-            </div>
-          </div>
-        </div>
-        <div class="bg-gray-50 px-5 py-3">
-          <div class="text-lg">
-            <a href="allEnseignement.html" class="font-medium text-green-600 hover:text-green-500">Voir tous</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-white overflow-hidden shadow rounded-lg">
-        <div class="p-5">
-          <div class="flex items-center">
-            <div class="flex-shrink-0">
-              <div class="rounded-md bg-yellow-500 p-4">
-                <i class="fas fa-clock text-white text-2xl"></i>
-              </div>
-            </div>
-            <div class="ml-5 w-0 flex-1">
-              <dl>
-                <dt class="text-base font-medium text-gray-500 truncate">Events En Attente</dt>
-                <dd class="text-2xl font-semibold text-gray-900">12</dd>
-              </dl>
-            </div>
-          </div>
-        </div>
-        <div class="bg-gray-50 px-5 py-3">
-          <div class="text-lg">
-            <a href="allEnseignement.html" class="font-medium text-yellow-600 hover:text-yellow-500">Voir tous</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-white overflow-hidden shadow rounded-lg">
-        <div class="p-5">
-          <div class="flex items-center">
-            <div class="flex-shrink-0">
-              <div class="rounded-md bg-purple-500 p-4">
-                <i class="fas fa-user-tie text-white text-2xl"></i>
-              </div>
-            </div>
-            <div class="ml-5 w-0 flex-1">
-              <dl>
-                <dt class="text-base font-medium text-gray-500 truncate">Total Events</dt>
-                <dd class="text-2xl font-semibold text-gray-900">57</dd>
-              </dl>
-            </div>
-          </div>
-        </div>
-        <div class="bg-gray-50 px-5 py-3">
-          <div class="text-lg">
-            <a href="allEnseignement.html" class="font-medium text-purple-600 hover:text-purple-500">Voir tous</a>
-          </div>
-        </div>
-      </div>
-    </div>
    </div>
 
 </section>
@@ -147,9 +90,7 @@
 
 
 <!-- start footer -->
-<?php
-//  require_once "footer.php"
- ?>
+<?php require_once "footer.php" ?>
 <!-- end footer -->
 
 <!-- custom js file link  -->

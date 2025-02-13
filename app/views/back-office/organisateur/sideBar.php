@@ -13,12 +13,10 @@
 
    <nav class="navbar">
       <a href="home.php"><i class="fas fa-home"></i><span>home</span></a>
-
-
-      <a href="myEvents.php"><i class="fas fa-graduation-cap"></i><span>My Events</span></a>
-      <a href="users.php"><i class="fas fa-chalkboard-user"></i><span> Tecket</span></a>
-      <a href="contact.php"><i class="fas fa-chalkboard-user"></i><span>Contact</span></a>
-
+      <a href="about.php"><i class="fas fa-question"></i><span>about</span></a>
+      <a href="courses.php"><i class="fas fa-graduation-cap"></i><span>courses</span></a>
+      <a href="teachers.php"><i class="fas fa-chalkboard-user"></i><span>teachers</span></a>
+      <a href="contact.php"><i class="fas fa-headset"></i><span>contact us</span></a>
    </nav>
 
 </div>
