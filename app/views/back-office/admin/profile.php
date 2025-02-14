@@ -10,7 +10,7 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
    <script src="https://cdn.tailwindcss.com"></script>
    <!-- custom css file link  -->
-   <link rel="stylesheet" href=" css/style2.css">
+   <link rel="stylesheet" href=" ../css/style2.css">
 
 </head>
 <body>
@@ -30,10 +30,10 @@
    <div class="info">
 
       <div class="user">
-         <img src="images/pic-1.jpg" alt="">
+         <img src="../images/pic-1.jpg" alt="">
          <h3>shaikh anas</h3>
          <p>student</p>
-         <a href="update.html" class="inline-btn">update profile</a>
+         <a href="updateProfil" class="inline-btn">update profile</a>
       </div>
    
       <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -153,7 +153,7 @@
 <!-- end footer -->
 
 <!-- custom js file link  -->
-<script src="js/script.js"></script>
+<script src="../js/script.js"></script>
 
    
 </body>

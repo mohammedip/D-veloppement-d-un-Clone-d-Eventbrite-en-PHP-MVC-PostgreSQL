@@ -43,7 +43,7 @@ $router->before('/admin/*', function () {
 });
 
 // Admin routes
-$router->get('/admin', PageControllerBackend::class, 'adminHome');
+
 $router->get('/admin/home', PageControllerBackend::class, 'adminHome');
 $router->get('/admin/organisateur', PageControllerBackend::class, 'adminOrganisateur');
 $router->get('/admin/Events', PageControllerBackend::class, 'adminEvents'); 
@@ -53,6 +53,17 @@ $router->get('/admin/gestionUtilisateurs', PageControllerBackend::class, 'adminG
 $router->get('/admin/organisateurProfile', PageControllerBackend::class, 'adminOrganisateurProfile'); 
 $router->get('/admin/updateProfil', PageControllerBackend::class, 'adminUpdateProfil');
 $router->get('/admin/category', PageControllerBackend::class, 'adminCategory'); 
+
+// New Routes for Organisateur
+$router->get('/organisateur/about', PageControllerBackend::class, 'organisateurAbout');
+$router->get('/organisateur/contact', PageControllerBackend::class, 'organisateurContact');
+$router->get('/organisateur/eventInformation', PageControllerBackend::class, 'organisateurEventInformation');
+$router->get('/organisateur/gestionUtilisateurs', PageControllerBackend::class, 'organisateurGestionUtilisateurs');
+$router->get('/organisateur/home', PageControllerBackend::class, 'organisateurHome');
+$router->get('/organisateur/myEvents', PageControllerBackend::class, 'organisateurMyEvents');
+$router->get('/organisateur/profile', PageControllerBackend::class, 'organisateurProfile');
+$router->get('/organisateur/update', PageControllerBackend::class, 'organisateurUpdate');
+$router->get('/organisateur/users', PageControllerBackend::class, 'organisateurUsers');
 
 
 // 

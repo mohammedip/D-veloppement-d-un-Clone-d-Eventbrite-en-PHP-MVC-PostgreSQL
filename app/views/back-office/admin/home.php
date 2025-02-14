@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <!-- custom css file link  -->
   <link rel="stylesheet" href=" css/style2.css">
+  <link rel="stylesheet" href=" ../css/style2.css">
 
 </head>
 
@@ -262,7 +263,7 @@
   
   <!-- end footer -->
   <!-- custom js file link  -->
-  <script src="js/script.js"></script>
+  <script src="../js/script.js"></script>
 
 
 </body>

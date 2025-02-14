@@ -17,13 +17,13 @@
       </div>
 
       <div class="profile">
-         <img src="images/pic-1.jpg" class="image" alt="">
+         <img src="../images/pic-1.jpg" class="image" alt="">
          <h3 class="name">shaikh anas</h3>
          <p class="role">studen</p>
-         <a href="profile.php" class="btn">view profile</a>
+         <a href="profile" class="btn">view profile</a>
 
          <div class="flex-btn">
-            <a href="../front-office/login.php" class="option-btn">log Out</a>
+            <a href="../login" class="option-btn">log Out</a>
             <!-- <a href="register.php" class="option-btn">register</a> -->
          </div>
       </div>
