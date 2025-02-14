@@ -45,14 +45,14 @@ $router->before('/admin/*', function () {
 // Admin routes
 $router->get('/admin', PageControllerBackend::class, 'adminHome');
 $router->get('/admin/home', PageControllerBackend::class, 'adminHome');
-$router->get('/admin/Organisateur', PageControllerBackend::class, 'adminOrganisateur');
+$router->get('/admin/organisateur', PageControllerBackend::class, 'adminOrganisateur');
 $router->get('/admin/Events', PageControllerBackend::class, 'adminEvents'); 
 $router->get('/admin/tag', PageControllerBackend::class, 'adminTag'); 
 $router->get('/admin/profile', PageControllerBackend::class, 'adminProfile');
-$router->get('/admin/GestionUtilisateurs', PageControllerBackend::class, 'adminGestionUtilisateurs'); 
-$router->get('/admin/OrganisateurProfile', PageControllerBackend::class, 'adminOrganisateurProfile'); 
-$router->get('/admin/UpdateProfil', PageControllerBackend::class, 'adminUpdateProfil');
-$router->get('/admin/Category', PageControllerBackend::class, 'adminCategory'); 
+$router->get('/admin/gestionUtilisateurs', PageControllerBackend::class, 'adminGestionUtilisateurs'); 
+$router->get('/admin/organisateurProfile', PageControllerBackend::class, 'adminOrganisateurProfile'); 
+$router->get('/admin/updateProfil', PageControllerBackend::class, 'adminUpdateProfil');
+$router->get('/admin/category', PageControllerBackend::class, 'adminCategory'); 
 
 
 // 
