@@ -4,79 +4,73 @@ require_once 'User.php';
 require_once 'Database.php';
 require_once 'LoginLogoutTrait.php';
 require_once 'RegisterTrait.php';
+require_once 'CRUD.php';
 
 class Organizator extends User {
     use LoginLogoutTrait, RegisterTrait;
 
-    public function __construct($id, $email, $name, $role = 'Organizator') {
-        parent::__construct($id, $email, $name, $role);
+    public function __construct($id, $email, $name, $role_id = 2) { // Assuming 2 is the Organizator role
+        parent::__construct($id, $email, $name, $role_id);
     }
 
-    // Add a course
-    public function addCourse($title, $description, $content, $tags = [], $category) {
-        $db = Database::getInstance()->getConnection();
+    // Add an event (instead of a course)
+    public function addEvent($titre, $description, $date, $lieu, $prix, $capacite, $categorie_id, $tags = []) {
+        $eventData = [
+            'titre' => $titre,
+            'description' => $description,
+            'date' => $date,
+            'lieu' => $lieu,
+            'prix' => $prix,
+            'capacite' => $capacite,
+            'statut' => 'pending', // Default status
+            'is_verified' => false,
+            'categorie_id' => $categorie_id,
+            'utilisateur_id' => $this->id
+        ];
 
-        $query = $db->prepare("INSERT INTO courses (title, description, content, teacher_id, category) VALUES (?, ?, ?, ?, ?)");
-        $query->execute([$title, $description, $content, $this->id, $category]);
+        $eventId = CRUD::insert('Evenement', $eventData) ? Database::getInstance()->getConnection()->lastInsertId() : null;
 
-        $courseId = $db->lastInsertId();
-
-        // Add tags if provided
-        foreach ($tags as $tag) {
-            $tagQuery = $db->prepare("INSERT INTO course_tags (course_id, tag) VALUES (?, ?)");
-            $tagQuery->execute([$courseId, $tag]);
-        }
-
-        echo "Course added successfully!";
-    }
-
-    // Manage courses
-    public function manageCourses() {
-        $db = Database::getInstance()->getConnection();
-
-        $query = $db->prepare("SELECT * FROM courses WHERE teacher_id = ?");
-        $query->execute([$this->id]);
-        $courses = $query->fetchAll();
-
-        if (empty($courses)) {
-            echo "You have not created any courses.";
-        } else {
-            foreach ($courses as $course) {
-                echo "Course ID: " . $course['id'] . ", Title: " . $course['title'] . ", Description: " . $course['description'] . "\n";
+        if ($eventId) {
+            foreach ($tags as $tagId) {
+                CRUD::insert('Evenement_Tag', ['evenement_id' => $eventId, 'tag_id' => $tagId]);
             }
+            return "Event added successfully!";
         }
+        return "Failed to add event.";
     }
 
-    // Edit a course
-    public function editCourse($courseId, $title, $description, $content, $tags = [], $category) {
-        $db = Database::getInstance()->getConnection();
-
-        $query = $db->prepare("UPDATE courses SET title = ?, description = ?, content = ?, category = ? WHERE id = ? AND teacher_id = ?");
-        $query->execute([$title, $description, $content, $category, $courseId, $this->id]);
-
-        // Remove existing tags and re-add them
-        $deleteTagsQuery = $db->prepare("DELETE FROM course_tags WHERE course_id = ?");
-        $deleteTagsQuery->execute([$courseId]);
-
-        foreach ($tags as $tag) {
-            $tagQuery = $db->prepare("INSERT INTO course_tags (course_id, tag) VALUES (?, ?)");
-            $tagQuery->execute([$courseId, $tag]);
-        }
-
-        echo "Course updated successfully!";
+    // Get all events created by this Organizator
+    public function listMyEvents() {
+        return CRUD::select('Evenement', '*', 'utilisateur_id = ?', [$this->id]);
     }
 
-    // Delete a course
-    public function deleteCourse($courseId) {
-        $db = Database::getInstance()->getConnection();
+    // Edit an event
+    public function editEvent($eventId, $titre, $description, $date, $lieu, $prix, $capacite, $categorie_id, $tags = []) {
+        $eventData = [
+            'titre' => $titre,
+            'description' => $description,
+            'date' => $date,
+            'lieu' => $lieu,
+            'prix' => $prix,
+            'capacite' => $capacite,
+            'categorie_id' => $categorie_id
+        ];
 
-        // Delete the course and associated tags
-        $deleteTagsQuery = $db->prepare("DELETE FROM course_tags WHERE course_id = ?");
-        $deleteTagsQuery->execute([$courseId]);
+        $updated = CRUD::update('Evenement', $eventData, 'id = ? AND utilisateur_id = ?', [$eventId, $this->id]);
 
-        $deleteCourseQuery = $db->prepare("DELETE FROM courses WHERE id = ? AND teacher_id = ?");
-        $deleteCourseQuery->execute([$courseId, $this->id]);
+        if ($updated) {
+            CRUD::delete('Evenement_Tag', 'evenement_id = ?', [$eventId]);
+            foreach ($tags as $tagId) {
+                CRUD::insert('Evenement_Tag', ['evenement_id' => $eventId, 'tag_id' => $tagId]);
+            }
+            return "Event updated successfully!";
+        }
+        return "Failed to update event.";
+    }
 
-        echo "Course deleted successfully!";
+    // Delete an event
+    public function deleteEvent($eventId) {
+        CRUD::delete('Evenement_Tag', 'evenement_id = ?', [$eventId]);
+        return CRUD::delete('Evenement', 'id = ? AND utilisateur_id = ?', [$eventId]) ? "Event deleted successfully!" : "Failed to delete event.";
     }
 }

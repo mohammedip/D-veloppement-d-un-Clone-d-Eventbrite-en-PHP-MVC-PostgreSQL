@@ -6,5 +6,5 @@ $register = new AuthController();
 
 $register->processRegister();
 
-header('Location:front-office/login');
+header('Location:login');
 exit;

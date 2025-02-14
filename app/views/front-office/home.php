@@ -391,25 +391,7 @@
 
    </div>
    <!-- Body inner end -->
-
-   <script>
-      import { getRequest } from './path/to/axiosConfig.js';
-
-document.addEventListener('DOMContentLoaded', async () => {
-    const pricingData = await getRequest('/api/pricing');
-    if (pricingData) {
-        const pricingContainer = document.getElementById('pricing-container');
-        pricingContainer.innerHTML = pricingData.map(item => `
-            <div class="pricing-card">
-                <h3>${item.plan}</h3>
-                <p>${item.price}</p>
-            </div>
-        `).join('');
-    }
-});
-   </script>
 </body>
-
 
 
 <!-- Mirrored from demo.themewinter.com/php/exhibz/index.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 01 Aug 2024 15:01:16 GMT -->

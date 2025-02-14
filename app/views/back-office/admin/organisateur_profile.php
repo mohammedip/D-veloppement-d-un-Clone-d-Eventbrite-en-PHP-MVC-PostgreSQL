@@ -33,10 +33,10 @@
          <span>developer</span>
       </div>
       <div class="flex">
-         <p>total playlists : <span>4</span></p>
-         <p>total videos : <span>18</span></p>
-         <p>total likes : <span>1208</span></p>
-         <p>total comments : <span>52</span></p>
+         <p>total Events : <span>4</span></p>
+         <p>total User Get Tecket : <span>18</span></p>
+         <p>total Ticket : <span>1208</span></p>
+
       </div>
    </div>
 
@@ -44,7 +44,7 @@
 
 <section class="courses">
 
-   <h1 class="heading">our courses</h1>
+   <h1 class="heading">our Events</h1>
 
    <div class="box-container">
 
@@ -54,7 +54,7 @@
             <span>10 videos</span>
          </div>
          <h3 class="title">complete HTML tutorial</h3>
-         <a href="playlist.html" class="inline-btn">view playlist</a>
+         <a href="playlist.html" class="inline-btn">view Event</a>
       </div>
 
       <div class="box">
@@ -63,7 +63,7 @@
             <span>10 videos</span>
          </div>
          <h3 class="title">complete CSS tutorial</h3>
-         <a href="playlist.html" class="inline-btn">view playlist</a>
+         <a href="playlist.html" class="inline-btn">view Event</a>
       </div>
 
       <div class="box">
@@ -72,7 +72,7 @@
             <span>10 videos</span>
          </div>
          <h3 class="title">complete javascript tutorial</h3>
-         <a href="playlist.html" class="inline-btn">view playlist</a>
+         <a href="playlist.html" class="inline-btn">view Event</a>
       </div>
 
       <div class="box">
@@ -81,7 +81,7 @@
             <span>10 videos</span>
          </div>
          <h3 class="title">complete Boostrap tutorial</h3>
-         <a href="playlist.html" class="inline-btn">view playlist</a>
+         <a href="playlist.html" class="inline-btn">view Event</a>
       </div>
 
    </div>

@@ -5,52 +5,38 @@ require_once 'Database.php';
 require_once 'LoginLogoutTrait.php';
 require_once 'RegisterTrait.php';
 require_once 'RoleRedirectTrait.php';
+require_once 'CRUD.php';
 
 class Participant extends User {
     use LoginLogoutTrait, RegisterTrait, RoleRedirectTrait;
 
-    private $courses = [];
+    private $events = [];
 
-    public function __construct($id, $email, $name, $role = 'student') {
-        parent::__construct($id, $email, $name, $role);
+    public function __construct($id, $email, $name, $role_id = 3) { // Assuming 3 is the Participant role
+        parent::__construct($id, $email, $name, $role_id);
     }
 
-    // Enroll in a course
-    public function enrollInCourse($courseId) {
-        $db = Database::getInstance()->getConnection();
-
-        $query = $db->prepare("SELECT * FROM enrollments WHERE user_id = ? AND course_id = ?");
-        $query->execute([$this->id, $courseId]);
-        if ($query->rowCount() > 0) {
-            echo "You are already enrolled in this course!";
-            return;
+    // Enroll in an event (instead of a course)
+    public function enrollInEvent($eventId) {
+        // Check if already enrolled
+        $existing = CRUD::select('Inscription', '*', 'participant_id = ? AND evenement_id = ?', [$this->id, $eventId]);
+        if (!empty($existing)) {
+            return "You are already registered for this event!";
         }
 
-        // Enroll the student in the course
-        $query = $db->prepare("INSERT INTO enrollments (user_id, course_id) VALUES (?, ?)");
-        $query->execute([$this->id, $courseId]);
-        echo "Enrolled in course successfully!";
+        // Insert into Inscription table
+        return CRUD::insert('Inscription', ['participant_id' => $this->id, 'evenement_id' => $eventId])
+            ? "Successfully registered for the event!"
+            : "Failed to register.";
     }
 
-    // View courses the student is enrolled in
-    public function viewMyCourses() {
-        $db = Database::getInstance()->getConnection();
-
-        $query = $db->prepare("
-            SELECT c.id, c.title, c.description 
-            FROM courses c 
-            INNER JOIN enrollments e ON c.id = e.course_id 
-            WHERE e.user_id = ?
-        ");
-        $query->execute([$this->id]);
-        $this->courses = $query->fetchAll();
-
-        if (empty($this->courses)) {
-            echo "You are not enrolled in any courses.";
-        } else {
-            foreach ($this->courses as $course) {
-                echo "Course ID: " . $course['id'] . ", Title: " . $course['title'] . ", Description: " . $course['description'] . "\n";
-            }
-        }
+    // View events the participant is enrolled in
+    public function viewMyEvents() {
+        return CRUD::select(
+            'Evenement e JOIN Inscription i ON e.id = i.evenement_id',
+            'e.id, e.titre, e.description, e.date, e.lieu',
+            'i.participant_id = ?',
+            [$this->id]
+        );
     }
 }

@@ -4,6 +4,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 use App\Core\Router;
 use App\Controllers\PageController;
+use App\Controllers\PageControllerBackend;
 use App\Controllers\AuthController;
 use App\Controllers\PaymentController;
 use App\Middleware\AuthMiddleware;
@@ -14,6 +15,7 @@ $router = new Router();
 
 // Frontend Routes
 $router->get('/', PageController::class, 'home');
+$router->get('/home', PageController::class, 'home');
 $router->get('/about', PageController::class, 'about');
 $router->get('/pricing', PageController::class, 'pricing');
 $router->get('/faq', PageController::class, 'faq');
@@ -30,10 +32,10 @@ $router->get('/register', PageController::class, 'register');
 $router->get('/404', PageController::class, 'notFound');
 
 // Login/Logout Routes
-$router->get('/login', AuthController::class, 'login');
-$router->post('/login', AuthController::class, 'processLogin');
-$router->post('/register', AuthController::class, 'processRegister');
-$router->get('/logout', AuthController::class, 'logout');
+// $router->get('/login', AuthController::class, 'login');
+// $router->post('/login', AuthController::class, 'processLogin');
+// $router->post('/register', AuthController::class, 'processRegister');
+// $router->get('/logout', AuthController::class, 'logout');
 
 // Admin Routes - Apply Middleware
 $router->before('/admin/*', function () {
@@ -41,16 +43,17 @@ $router->before('/admin/*', function () {
 });
 
 // Admin routes
-$router->get('/admin', AuthController::class, 'dashboard');
-$router->get('/admin/home', AuthController::class, 'home');
-$router->get('/admin/contact', AuthController::class, 'contact');
-$router->get('/admin/courses', AuthController::class, 'events'); 
-$router->get('/admin/playlist', AuthController::class, 'playlist');
-$router->get('/admin/profile', AuthController::class, 'profile');
-$router->get('/admin/teachers', AuthController::class, 'teachers');
-$router->get('/admin/teacher-profile', AuthController::class, 'teacherProfile');
-$router->get('/admin/update', AuthController::class, 'update');
-$router->get('/admin/watch-video', AuthController::class, 'watchVideo');
+$router->get('/admin', PageControllerBackend::class, 'adminHome');
+$router->get('/admin/home', PageControllerBackend::class, 'adminHome');
+$router->get('/admin/Organisateur', PageControllerBackend::class, 'adminOrganisateur');
+$router->get('/admin/Events', PageControllerBackend::class, 'adminEvents'); 
+$router->get('/admin/tag', PageControllerBackend::class, 'adminTag'); 
+$router->get('/admin/profile', PageControllerBackend::class, 'adminProfile');
+$router->get('/admin/GestionUtilisateurs', PageControllerBackend::class, 'adminGestionUtilisateurs'); 
+$router->get('/admin/OrganisateurProfile', PageControllerBackend::class, 'adminOrganisateurProfile'); 
+$router->get('/admin/UpdateProfil', PageControllerBackend::class, 'adminUpdateProfil');
+$router->get('/admin/Category', PageControllerBackend::class, 'adminCategory'); 
+
 
 // 
 $router->get('/checkout', PaymentController::class, 'checkout');
