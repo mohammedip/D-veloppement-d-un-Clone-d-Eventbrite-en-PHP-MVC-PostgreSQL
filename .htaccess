@@ -1,7 +1,12 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    RewriteBase /Eventbrite-Clone/
+    RewriteBase /AAAA-Eventbrite-Clone/
 
-    RewriteCond %{REQUEST_URI} !^/Eventbrite-Clone/public/
+    # Allow direct access to assets
+    RewriteCond %{REQUEST_URI} ^/AAAA-Eventbrite-Clone/app/views/front-office/(css|js|images)/(.*)$ [NC]
+    RewriteRule ^ - [L]
+
+    # Redirect everything else to public/
+    RewriteCond %{REQUEST_URI} !^/AAAA-Eventbrite-Clone/public/
     RewriteRule ^(.*)$ public/$1 [L]
 </IfModule>
