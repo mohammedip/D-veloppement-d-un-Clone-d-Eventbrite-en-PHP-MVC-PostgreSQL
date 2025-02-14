@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ticket</title>
+  <title>home</title>
 
   <!-- font awesome cdn link  -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
@@ -31,66 +31,99 @@
 
 
   <!-- body Start -->
-  <div class="bg-white rounded-2xl shadow-xl border border-[#9754b3]/10">
-    <!-- Informations de l'événement -->
-    <div class="p-6 border-b border-gray-200">
-        <h2 class="text-2xl font-semibold text-[#9754b3] mb-4">Festival de Musique 2024</h2>
-        <div class="grid grid-cols-2 gap-4 text-lg">
-            <div>
-                <span class="text-gray-600">Date:</span>
-                <span class="ml-2 text-gray-800">15 Juin 2024</span>
-            </div>
-            <div>
-                <span class="text-gray-600">Lieu:</span>
-                <span class="ml-2 text-gray-800">Paris</span>
-            </div>
-        </div>
-    </div>
-    <!-- Configuration du ticket -->
-    <div class="p-6">
-        <h3 class="text-xl font-medium text-gray-800 mb-6">Configuration du ticket</h3>
+  <section class="home-grid">
+  <div class="mt-8">
+      <div class="bg-white shadow rounded-lg">
+        <div class="px-4 py-5 sm:px-6 flex justify-between items-center">
+          <div class="flex items-center">
+            <i class="fas fa-user-clock text-yellow-500 text-xl mr-3"></i>
+            <h3 class="text-lg leading-6 font-medium text-gray-900">Tout User Inscri</h3>
+          </div>
         
-        <!-- Type de ticket -->
-        <div class="mb-8">
-            <label class="text-lg font-medium text-gray-700 mb-4 block">Type d'accès</label>
-            <div class="flex gap-4">
-                <label class="flex-1 relative">
-                    <input type="radio" name="ticketType" value="gratuit" class="peer sr-only ticket-type-radio">
-                    <div class="p-4 text-center border-2 border-gray-200 rounded-xl cursor-pointer peer-checked:border-[#9754b3] peer-checked:bg-purple-50 peer-checked:text-[#9754b3] text-lg">
-                        Gratuit
-                    </div>
-                </label>
-                <label class="flex-1 relative">
-                    <input type="radio" name="ticketType" value="payant" class="peer sr-only ticket-type-radio" checked>
-                    <div class="p-4 text-center border-2 border-gray-200 rounded-xl cursor-pointer peer-checked:border-[#9754b3] peer-checked:bg-purple-50 peer-checked:text-[#9754b3] text-lg">
-                        Payant
-                    </div>
-                </label>
-            </div>
         </div>
-        <!-- Prix -->
-        <div class="mb-8 price-section">
-            <label class="text-lg font-medium text-gray-700 mb-4 block">Prix du ticket</label>
-            <div class="flex items-center gap-4">
-                <div class="relative flex-1">
-                    <input type="number" class="w-full p-4 text-xl border-2 border-gray-200 rounded-xl focus:border-[#9754b3] focus:ring focus:ring-purple-200" value="50">
-                    <span class="absolute right-4 top-1/2 -translate-y-1/2 text-xl text-gray-500">€</span>
-                </div>
-            </div>
+        <div class="border-t border-gray-200">
+          <div class="overflow-x-auto">
+            <table class="min-w-full divide-y divide-gray-200">
+              <thead class="bg-gray-50">
+                <tr>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Enseignant</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
+            
+              
+                </tr>
+              </thead>
+              <tbody class="bg-white divide-y divide-gray-200">
+            
+                <tr class="hover:bg-gray-50">
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="flex items-center">
+                      <img class="h-16 w-16 rounded-full object-cover"
+                        src="https://ui-avatars.com/api/?name=Pierre%20Lefevre&background=random"
+                        alt="Pierre Lefevre">
+                      <div class="ml-4">
+                        <div class="text-xl font-medium text-gray-900">
+                          Pierre Lefevre
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-xl text-gray-900">pierre.lefevre@example.com</div>
+                  </td>
+              
+                
+                </tr>
+                <tr class="hover:bg-gray-50">
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="flex items-center">
+                      <img class="h-16 w-16 rounded-full object-cover"
+                        src="https://ui-avatars.com/api/?name=Pierre%20Lefevre&background=random"
+                        alt="Pierre Lefevre">
+                      <div class="ml-4">
+                        <div class="text-xl font-medium text-gray-900">
+                          Pierre Lefevre
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-xl text-gray-900">pierre.lefevre@example.com</div>
+                  </td>
+              
+                  
+                </tr>
+                <tr class="hover:bg-gray-50">
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="flex items-center">
+                      <img class="h-16 w-16 rounded-full object-cover"
+                        src="https://ui-avatars.com/api/?name=Pierre%20Lefevre&background=random"
+                        alt="Pierre Lefevre">
+                      <div class="ml-4">
+                        <div class="text-xl font-medium text-gray-900">
+                          Pierre Lefevre
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-xl text-gray-900">pierre.lefevre@example.com</div>
+            
+                
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
         </div>
-        <!-- Capacité -->
-      
+      </div>
+      <button type="button"
+                        class="inline-flex items-center px-4 py-2 border border-transparent text-xl leading-4 font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 mt-6 ">
+                        
+                        <i class="fas fa-check mr-2"></i>
+                        Telecharger PDF
+                      </button>
     </div>
-    <!-- Actions -->
-    <div class="p-6 bg-gray-50 rounded-b-2xl flex justify-end gap-4">
-        <button class="px-6 py-3 border-2 border-gray-300 rounded-xl text-lg text-gray-700 hover:bg-gray-100 transition-all">
-            Annuler
-        </button>
-        <button class="px-8 py-3 bg-[#9754b3] text-white rounded-xl text-lg hover:bg-purple-700 transition-all">
-            Enregistrer
-        </button>
-    </div>
-</div>
+  </section>
   <!-- body end -->
 
 
@@ -108,35 +141,7 @@
   <!-- end footer -->
   <!-- custom js file link  -->
   <script src="js/script.js"></script>
-  <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const radioButtons = document.querySelectorAll('.ticket-type-radio');
-    const priceSection = document.querySelector('.price-section');
-    const capacitySection = document.querySelector('.capacity-section');
 
-    function toggleSections(isGratuit) {
-        if (isGratuit) {
-            priceSection.style.display = 'none';
-            capacitySection.style.display = 'none';
-        } else {
-            priceSection.style.display = 'block';
-            capacitySection.style.display = 'block';
-        }
-    }
-
-    radioButtons.forEach(radio => {
-        radio.addEventListener('change', (e) => {
-            toggleSections(e.target.value === 'gratuit');
-        });
-    });
-
-    // Initialize state based on default checked radio
-    const checkedRadio = document.querySelector('.ticket-type-radio:checked');
-    if (checkedRadio) {
-        toggleSections(checkedRadio.value === 'gratuit');
-    }
-});
-</script>
 
 </body>
 
