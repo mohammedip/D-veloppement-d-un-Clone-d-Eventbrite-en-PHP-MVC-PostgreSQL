@@ -56,28 +56,8 @@
         </div>
       </div>
 
-      <div class="bg-white overflow-hidden shadow rounded-lg">
-        <div class="p-5">
-          <div class="flex items-center">
-            <div class="flex-shrink-0">
-              <div class="rounded-md bg-green-500 p-4">
-                <i class="fas fa-chalkboard-teacher text-white text-2xl"></i>
-              </div>
-            </div>
-            <div class="ml-5 w-0 flex-1">
-              <dl>
-                <dt class="text-base font-medium text-gray-500 truncate">Users get tecket</dt>
-                <dd class="text-2xl font-semibold text-gray-900">45</dd>
-              </dl>
-            </div>
-          </div>
-        </div>
-        <div class="bg-gray-50 px-5 py-3">
-          <div class="text-lg">
-            <a href="allEnseignement.html" class="font-medium text-green-600 hover:text-green-500">Voir tous</a>
-          </div>
-        </div>
-      </div>
+    
+      
 
       <div class="bg-white overflow-hidden shadow rounded-lg">
         <div class="p-5">
@@ -89,7 +69,7 @@
             </div>
             <div class="ml-5 w-0 flex-1">
               <dl>
-                <dt class="text-base font-medium text-gray-500 truncate">Users En Attente</dt>
+                <dt class="text-base font-medium text-gray-500 truncate">Total Users</dt>
                 <dd class="text-2xl font-semibold text-gray-900">12</dd>
               </dl>
             </div>

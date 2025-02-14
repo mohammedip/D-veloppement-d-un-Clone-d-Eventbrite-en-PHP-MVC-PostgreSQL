@@ -33,13 +33,13 @@
   <!-- body Start -->
   <section>
     <!-- Header with larger text -->
-    <div class="max-w-7xl mx-auto mb-12 text-center">
+    <div class="mx-auto mb-12 text-center">
         <h1 class="text-5xl font-bold text-white mb-4">Upcoming Events</h1>
         <p class="text-purple-100 text-lg">Discover amazing events happening around you</p>
     </div>
 
     <!-- Events Grid -->
-    <div class=" mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Event Card 1 -->
         <article class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-shadow duration-300">
             <img src="/api/placeholder/600/300" alt="Tech Conference" class="w-full h-48 object-cover">
@@ -160,10 +160,34 @@
             </div>
         </article>
 
-        <!-- Load More Button -->
-        <div class="col-span-full text-center mt-8">
-            <button class="px-8 py-3 bg-white text-[#8e44ad] rounded-xl font-semibold hover:bg-purple-50 transition duration-300 text-lg">
-                Load More Events
+        <!-- Pagination -->
+        <div class="col-span-full flex justify-center items-center gap-2 mt-12">
+            <button class="p-2 text-white hover:bg-purple-700 rounded-lg transition duration-300" aria-label="Previous page">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            
+            <div class="flex gap-2">
+                <button class="px-4 py-2 bg-[#8e44ad] text-white rounded-lg text-lg">
+                    1
+                </button>
+                <button class="px-4 py-2 bg-white text-[#8e44ad] rounded-lg hover:bg-purple-50 transition duration-300 text-lg">
+                    2
+                </button>
+                <button class="px-4 py-2 bg-white text-[#8e44ad] rounded-lg hover:bg-purple-50 transition duration-300 text-lg">
+                    3
+                </button>
+                <span class="px-4 py-2 text-gray-400 text-lg">...</span>
+                <button class="px-4 py-2 bg-white text-[#8e44ad] rounded-lg hover:bg-purple-50 transition duration-300 text-lg">
+                    12
+                </button>
+            </div>
+
+            <button class="p-2 text-white hover:bg-purple-700 rounded-lg transition duration-300" aria-label="Next page">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
             </button>
         </div>
     </div>

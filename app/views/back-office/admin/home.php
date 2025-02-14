@@ -66,7 +66,7 @@
             </div>
             <div class="ml-5 w-0 flex-1">
               <dl>
-                <dt class="text-base font-medium text-gray-500 truncate">Organisateur Actifs</dt>
+                <dt class="text-base font-medium text-gray-500 truncate">Total Organisateur </dt>
                 <dd class="text-2xl font-semibold text-gray-900">45</dd>
               </dl>
             </div>
@@ -79,28 +79,7 @@
         </div>
       </div>
 
-      <div class="bg-white overflow-hidden shadow rounded-lg">
-        <div class="p-5">
-          <div class="flex items-center">
-            <div class="flex-shrink-0">
-              <div class="rounded-md bg-yellow-500 p-4">
-                <i class="fas fa-clock text-white text-2xl"></i>
-              </div>
-            </div>
-            <div class="ml-5 w-0 flex-1">
-              <dl>
-                <dt class="text-base font-medium text-gray-500 truncate">En Attente</dt>
-                <dd class="text-2xl font-semibold text-gray-900">12</dd>
-              </dl>
-            </div>
-          </div>
-        </div>
-        <div class="bg-gray-50 px-5 py-3">
-          <div class="text-lg">
-            <a href="allEnseignement.html" class="font-medium text-yellow-600 hover:text-yellow-500">Voir tous</a>
-          </div>
-        </div>
-      </div>
+    
 
       <div class="bg-white overflow-hidden shadow rounded-lg">
         <div class="p-5">
@@ -112,7 +91,7 @@
             </div>
             <div class="ml-5 w-0 flex-1">
               <dl>
-                <dt class="text-base font-medium text-gray-500 truncate">Total Organisateur</dt>
+                <dt class="text-base font-medium text-gray-500 truncate">Total Events</dt>
                 <dd class="text-2xl font-semibold text-gray-900">57</dd>
               </dl>
             </div>
@@ -231,10 +210,15 @@
                   </td>
                   <td class="px-6 py-4 whitespace-nowrap text-right text-lg font-medium">
                     <form class="inline-flex space-x-2">
-                      <button name="action" value="approve"
+                    <button type="submit" name="action" value="approve"
                         class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
                         <i class="fas fa-check mr-2"></i>
-                        Voir
+                      Accepter
+                      </button>
+                      <button type="submit" name="action" value="reject"
+                        class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+                        <i class="fas fa-times mr-2"></i>
+                        Refuser
                       </button>
                     </form>
                   </td>
